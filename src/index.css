@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 220 40% 13%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 40% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 40% 13%;
+
+    --primary: 220 60% 20%;
+    --primary-foreground: 45 100% 96%;
+
+    --secondary: 45 90% 55%;
+    --secondary-foreground: 220 60% 15%;
+
+    --muted: 210 20% 94%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 45 90% 55%;
+    --accent-foreground: 220 60% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 220 60% 20%;
+
+    --radius: 0.75rem;
+
+    --hero-overlay: 220 60% 10%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .hero-overlay {
+    background: linear-gradient(
+      to right,
+      hsl(var(--hero-overlay) / 0.8) 0%,
+      hsl(var(--hero-overlay) / 0.4) 50%,
+      transparent 100%
+    );
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold text-primary text-center mb-4;
+  }
+
+  .section-subheading {
+    @apply text-muted-foreground text-center max-w-2xl mx-auto mb-12;
+  }
+
+  .gold-underline {
+    @apply w-16 h-1 bg-secondary mx-auto mt-2 rounded-full;
+  }
+}
+
+@keyframes slide {
+  0%, 30% { opacity: 1; }
+  33%, 97% { opacity: 0; }
+  100% { opacity: 1; }
+}
